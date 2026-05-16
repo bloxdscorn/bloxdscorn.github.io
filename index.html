@@ -136,6 +136,8 @@
       margin-bottom: 32px;
     }
 
+    /* TOP BUTTONS (UNCHANGED SIZE/STYLE) */
+
     .top-links {
       display: flex;
       justify-content: center;
@@ -147,12 +149,17 @@
       display: flex;
       align-items: center;
       gap: 10px;
+
       padding: 14px 22px;
+
       border-radius: 14px;
+
       text-decoration: none;
       color: white;
+
       transition: 0.2s ease;
       font-weight: 700;
+
       border: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -166,6 +173,8 @@
     .discord-btn { background: #5865F2; }
     .youtube-btn { background: #ff0000; }
 
+    /* SECTION TITLE */
+
     .section-title {
       text-align: center;
       margin-top: 5px;
@@ -176,6 +185,8 @@
       color: white;
       text-shadow: 0 5px 20px rgba(0,0,0,0.35);
     }
+
+    /* PACK GRID */
 
     .packs {
       width: 100%;
@@ -227,13 +238,13 @@
       font-size: 15px;
     }
 
+    /* DOWNLOAD BUTTONS (UPDATED STYLE) */
+
     @keyframes waveGradient {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
-    /* UPDATED DOWNLOAD BUTTONS */
 
     .download-btn {
       width: 100%;
@@ -304,6 +315,8 @@
         linear-gradient(135deg, #B4B4B4, #7A7A7A, #B4B4B4);
     }
 
+    /* FOOTER */
+
     footer {
       text-align: center;
       color: rgba(255,255,255,0.45);
@@ -311,9 +324,13 @@
       font-size: 14px;
     }
 
+    /* MOBILE */
+
     @media (max-width: 900px) {
       .side-image-left,
-      .side-image-right { display: none; }
+      .side-image-right {
+        display: none;
+      }
     }
 
     @media (max-width: 700px) {
