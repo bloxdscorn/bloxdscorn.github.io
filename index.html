@@ -132,7 +132,7 @@
       padding: 10px 25px 70px;
 
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 28px;
     }
 
@@ -160,13 +160,13 @@
 
     .pack img.preview {
       width: 100%;
-      height: 180px;
+      height: 190px;
       object-fit: cover;
       display: block;
     }
 
     .pack-content {
-      padding: 24px;
+      padding: 26px;
     }
 
     /* TITLE ROW */
@@ -174,27 +174,33 @@
     .title-row {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
+      gap: 16px;
+      margin-bottom: 16px;
     }
 
     .pack-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
       object-fit: cover;
+      flex-shrink: 0;
+
+      box-shadow:
+        0 5px 18px rgba(0,0,0,0.35);
     }
 
     .title-row h2 {
       margin: 0;
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 800;
+      line-height: 1.1;
     }
 
     .pack p {
       color: rgba(255,255,255,0.72);
-      line-height: 1.5;
-      margin-bottom: 22px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-size: 15px;
     }
 
     /* DOWNLOAD BUTTON */
@@ -251,6 +257,15 @@
         height: 160px;
       }
 
+      .pack-icon {
+        width: 58px;
+        height: 58px;
+      }
+
+      .title-row h2 {
+        font-size: 25px;
+      }
+
     }
 
   </style>
@@ -274,21 +289,15 @@
 
       <div class="top-links">
 
-        <!-- BLOXD -->
-
         <a class="top-btn" href="https://bloxd.io" target="_blank">
           <i class="fa-solid fa-cube"></i>
           Bloxd World
         </a>
 
-        <!-- DISCORD -->
-
         <a class="top-btn" href="https://discord.gg/YOURINVITE" target="_blank">
           <i class="fa-brands fa-discord"></i>
           Discord
         </a>
-
-        <!-- YOUTUBE -->
 
         <a class="top-btn" href="https://youtube.com" target="_blank">
           <i class="fa-brands fa-youtube"></i>
