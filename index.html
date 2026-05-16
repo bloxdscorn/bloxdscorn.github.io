@@ -1,113 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Packs</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Texture Packs</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f1117;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
       color: white;
+      overflow-x: hidden;
+      background: black;
+    }
+
+    /* BACKGROUND */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url("https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+      transform: scale(1.05);
+    }
+
+    .background::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(5px);
+      background: rgba(0,0,0,0.25);
+    }
+
+    /* HERO */
+
+    .hero {
+      width: 100%;
+      padding: 80px 20px 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-box {
+      width: 100%;
+      max-width: 1000px;
+      padding: 45px;
+      border-radius: 28px;
+
+      background: rgba(20,20,20,0.45);
+      backdrop-filter: blur(18px);
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      box-shadow:
+        0 0 30px rgba(0,0,0,0.35),
+        inset 0 0 0 1px rgba(255,255,255,0.03);
+
       text-align: center;
     }
 
-    .header {
-      padding: 50px 20px;
+    .hero h1 {
+      font-size: 58px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -2px;
     }
 
-    .header h1 {
-      font-size: 50px;
-      margin-bottom: 10px;
-    }
-
-    .header p {
-      color: #999;
+    .hero p {
+      color: rgba(255,255,255,0.7);
       font-size: 18px;
+      margin-bottom: 30px;
     }
 
-    .packs {
+    /* TOP BUTTONS */
+
+    .top-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 30px;
-      padding: 40px;
+      gap: 16px;
     }
 
-    .card {
-      background: #1b1f2a;
-      border-radius: 18px;
-      width: 280px;
-      overflow: hidden;
-      transition: 0.2s ease;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
+    .top-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+      padding: 14px 22px;
 
-    .card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
+      background: rgba(255,255,255,0.08);
 
-    .card-content {
-      padding: 20px;
-    }
+      border: 1px solid rgba(255,255,255,0.08);
 
-    .card h2 {
-      margin-top: 0;
-    }
+      border-radius: 14px;
 
-    .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background: #4b7cff;
-      color: white;
-      border-radius: 10px;
       text-decoration: none;
-      font-weight: bold;
+      color: white;
+
+      transition: 0.2s ease;
+      font-weight: 600;
     }
 
-    .button:hover {
-      background: #6994ff;
+    .top-btn:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.14);
+    }
+
+    /* PACK GRID */
+
+    .packs {
+      width: 100%;
+      max-width: 1300px;
+
+      margin: auto;
+      padding: 10px 25px 70px;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    /* PACK CARD */
+
+    .pack {
+      background: rgba(18,18,18,0.55);
+      backdrop-filter: blur(16px);
+
+      border: 1px solid rgba(255,255,255,0.06);
+
+      border-radius: 24px;
+
+      overflow: hidden;
+
+      transition: 0.22s ease;
+
+      box-shadow:
+        0 10px 35px rgba(0,0,0,0.35);
+    }
+
+    .pack:hover {
+      transform: translateY(-6px);
+    }
+
+    .pack img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pack-content {
+      padding: 24px;
+    }
+
+    .pack h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+
+    .pack p {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.5;
+      margin-bottom: 22px;
+    }
+
+    /* DOWNLOAD BUTTON */
+
+    .download-btn {
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      padding: 15px;
+
+      border-radius: 14px;
+
+      text-decoration: none;
+      color: white;
+
+      font-weight: 700;
+
+      background:
+        linear-gradient(135deg, #4b7cff, #7d5cff);
+
+      transition: 0.2s ease;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.02);
+      filter: brightness(1.08);
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      padding: 0 20px 40px;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero-box {
+        padding: 35px 25px;
+      }
+
+      .pack img {
+        height: 160px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="header">
-    <h1>My Bloxd Packs</h1>
-    <p>Texture packs and projects</p>
-  </div>
+  <div class="background"></div>
 
-  <div class="packs">
+  <!-- HERO -->
 
-    <div class="card">
-      <img src="https://picsum.photos/400/200" alt="">
-      <div class="card-content">
-        <h2>Blue Pack</h2>
-        <p>Clean blue themed texture pack.</p>
-        <a class="button" href="#">Download</a>
+  <section class="hero">
+    <div class="hero-box">
+
+      <h1>Texture Packs</h1>
+
+      <p>
+        Clean Bloxd texture packs and PvP visuals.
+      </p>
+
+      <div class="top-links">
+
+        <!-- BLOXD -->
+
+        <a class="top-btn" href="https://bloxd.io" target="_blank">
+          <i class="fa-solid fa-cube"></i>
+          Bloxd World
+        </a>
+
+        <!-- DISCORD -->
+
+        <a class="top-btn" href="https://discord.gg/YOURINVITE" target="_blank">
+          <i class="fa-brands fa-discord"></i>
+          Discord
+        </a>
+
+        <!-- YOUTUBE -->
+
+        <a class="top-btn" href="https://youtube.com" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PACKS -->
+
+  <section class="packs">
+
+    <!-- PACK 1 -->
+
+    <div class="pack">
+      <img src="https://picsum.photos/500/300?1">
+
+      <div class="pack-content">
+        <h2>Blue 16x</h2>
+
+        <p>
+          Clean blue PvP texture pack with smooth particles and modern UI.
+        </p>
+
+        <a class="download-btn" href="#">
+          <i class="fa-solid fa-download"></i>
+          Download
+        </a>
       </div>
     </div>
 
-    <div class="card">
-      <img src="https://picsum.photos/401/200" alt="">
-      <div class="card-content">
-        <h2>Dark Pack</h2>
-        <p>Minimal dark style for PvP.</p>
-        <a class="button" href="#">Download</a>
+    <!-- PACK 2 -->
+
+    <div class="pack">
+      <img src="https://picsum.photos/500/300?2">
+
+      <div class="pack-content">
+        <h2>Shadow Pack</h2>
+
+        <p>
+          Dark themed visuals designed for competitive gameplay.
+        </p>
+
+        <a class="download-btn" href="#">
+          <i class="fa-solid fa-download"></i>
+          Download
+        </a>
       </div>
     </div>
 
-  </div>
+    <!-- PACK 3 -->
+
+    <div class="pack">
+      <img src="https://picsum.photos/500/300?3">
+
+      <div class="pack-content">
+        <h2>Ruby Revamp</h2>
+
+        <p>
+          High contrast textures with red highlights and clean swords.
+        </p>
+
+        <a class="download-btn" href="#">
+          <i class="fa-solid fa-download"></i>
+          Download
+        </a>
+      </div>
+    </div>
+
+    <!-- PACK 4 -->
+
+    <div class="pack">
+      <img src="https://picsum.photos/500/300?4">
+
+      <div class="pack-content">
+        <h2>Frostbite</h2>
+
+        <p>
+          Icy themed PvP pack with transparent GUI and icy effects.
+        </p>
+
+        <a class="download-btn" href="#">
+          <i class="fa-solid fa-download"></i>
+          Download
+        </a>
+      </div>
+    </div>
+
+    <!-- PACK 5 -->
+
+    <div class="pack">
+      <img src="https://picsum.photos/500/300?5">
+
+      <div class="pack-content">
+        <h2>Carbon Edit</h2>
+
+        <p>
+          Minimal dark pack focused on visibility and performance.
+        </p>
+
+        <a class="download-btn" href="#">
+          <i class="fa-solid fa-download"></i>
+          Download
+        </a>
+      </div>
+    </div>
+
+    <!-- PACK 6 -->
+
+    <div class="pack">
+      <img src="https://picsum.photos/500/300?6">
+
+      <div class="pack-content">
+        <h2>Galaxy Pack</h2>
+
+        <p>
+          Purple space themed textures with glowing item effects.
+        </p>
+
+        <a class="download-btn" href="#">
+          <i class="fa-solid fa-download"></i>
+          Download
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 YourName — All Rights Reserved
+  </footer>
 
 </body>
 </html>
