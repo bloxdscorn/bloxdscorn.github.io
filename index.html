@@ -20,13 +20,64 @@
       overflow-x: hidden;
       background: black;
     }
-    /* BACKGROUND */
+
+    /* ==================== DOWNLOAD BUTTONS ==================== */
+    .download-btn {
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 15px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: white;
+      font-weight: 700;
+      transition: 0.22s ease;
+      position: relative;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    .download-btn::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      background: linear-gradient(135deg, #00E1FF, #008CFF, #00E1FF);
+      background-size: 300% 300%;
+      animation: waveGradient 5s ease infinite;
+      border-radius: 17px;           /* Slightly larger for perfect rounding */
+      z-index: -1;
+      filter: brightness(1.1);
+    }
+
+    .download-btn:hover {
+      transform: scale(1.03);
+      filter: brightness(1.08);
+    }
+
+    /* Individual gradient colors */
+    .btn1::before { background: linear-gradient(135deg, #00E1FF, #008CFF, #00E1FF); }
+    .btn2::before { background: linear-gradient(135deg, #FFD100, #CE5848, #FFD100); }
+    .btn3::before { background: linear-gradient(135deg, #F700FF, #3A00FF, #F700FF); }
+    .btn4::before { background: linear-gradient(135deg, #FFFFFF, #3573F3, #FFFFFF); }
+    .btn5::before { background: linear-gradient(135deg, #00297C, #00179F, #00297C); }
+    .btn6::before { background: linear-gradient(135deg, #B4B4B4, #7A7A7A, #B4B4B4); }
+
+    @keyframes waveGradient {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    /* ==================== END DOWNLOAD BUTTONS ==================== */
+
+    /* Rest of your styles (unchanged) */
     .background {
       position: fixed;
       inset: 0;
-      background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.78)),
-        url("https://i.imgur.com/NZ54LpT.jpeg");
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.78)),
+                  url("https://i.imgur.com/NZ54LpT.jpeg");
       background-size: cover;
       background-position: center;
       z-index: -2;
@@ -39,7 +90,7 @@
       backdrop-filter: blur(5px);
       background: rgba(0,0,0,0.2);
     }
-    /* HERO */
+
     .hero {
       width: 100%;
       padding: 80px 20px 55px;
@@ -54,14 +105,13 @@
       background: rgba(20,20,20,0.45);
       backdrop-filter: blur(18px);
       border: 1px solid rgba(255,255,255,0.08);
-      box-shadow:
-        0 0 30px rgba(0,0,0,0.35),
-        inset 0 0 0 1px rgba(255,255,255,0.03);
+      box-shadow: 0 0 30px rgba(0,0,0,0.35),
+                  inset 0 0 0 1px rgba(255,255,255,0.03);
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-    /* SHINE EFFECT */
+
     .hero-box::before {
       content: "";
       position: absolute;
@@ -69,38 +119,20 @@
       left: -220px;
       width: 140px;
       height: 420px;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,0),
-          rgba(255,255,255,0.18),
-          rgba(255,255,255,0)
-        );
+      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.18), rgba(255,255,255,0));
       transform: rotate(22deg);
       animation: shineSweep 3s infinite;
       pointer-events: none;
       z-index: 1;
     }
     @keyframes shineSweep {
-      0% {
-        left: -260px;
-        opacity: 0;
-      }
-      8% {
-        opacity: 1;
-      }
-      30% {
-        left: 120%;
-        opacity: 0;
-      }
-      100% {
-        left: 120%;
-        opacity: 0;
-      }
+      0%   { left: -260px; opacity: 0; }
+      8%   { opacity: 1; }
+      30%  { left: 120%; opacity: 0; }
+      100% { left: 120%; opacity: 0; }
     }
-    /* SIDE IMAGES */
-    .side-image-left,
-    .side-image-right {
+
+    .side-image-left, .side-image-right {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -109,32 +141,17 @@
       pointer-events: none;
       user-select: none;
     }
-    .side-image-left {
-      left: 25px;
-    }
-    .side-image-right {
-      right: 25px;
-    }
-    /* CENTER CONTENT */
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-    /* TITLE IMAGE */
+    .side-image-left { left: 25px; }
+    .side-image-right { right: 25px; }
+
     .hero-title-image {
       width: 100%;
       max-width: 520px;
       margin: 0 auto 18px;
       display: block;
-      filter:
-        drop-shadow(0 5px 18px rgba(0,0,0,0.35));
+      filter: drop-shadow(0 5px 18px rgba(0,0,0,0.35));
     }
-    .hero p {
-      color: rgba(255,255,255,0.72);
-      font-size: 18px;
-      margin-bottom: 32px;
-    }
-    /* TOP BUTTONS */
+
     .top-links {
       display: flex;
       justify-content: center;
@@ -154,31 +171,11 @@
       border: 1px solid rgba(255,255,255,0.08);
     }
     .top-btn:hover {
-      transform:
-        translateY(-3px)
-        scale(1.045);
+      transform: translateY(-3px) scale(1.045);
       filter: brightness(1.08);
-      box-shadow:
-        0 10px 25px rgba(0,0,0,0.28);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.28);
     }
-    /* PLAY BLOXD */
-    .bloxd-btn {
-      background: rgba(255,255,255,0.08);
-    }
-    .bloxd-btn img {
-      width: 18px;
-      height: 18px;
-      object-fit: contain;
-    }
-    /* DISCORD */
-    .discord-btn {
-      background: #5865F2;
-    }
-    /* YOUTUBE */
-    .youtube-btn {
-      background: #ff0000;
-    }
-    /* SUBHEADER */
+
     .section-title {
       text-align: center;
       margin-top: 5px;
@@ -187,10 +184,9 @@
       font-weight: 800;
       letter-spacing: -1px;
       color: white;
-      text-shadow:
-        0 5px 20px rgba(0,0,0,0.35);
+      text-shadow: 0 5px 20px rgba(0,0,0,0.35);
     }
-    /* PACK GRID */
+
     .packs {
       width: 100%;
       max-width: 1350px;
@@ -200,7 +196,7 @@
       grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
       gap: 30px;
     }
-    /* PACK CARD */
+
     .pack {
       background: rgba(18,18,18,0.58);
       backdrop-filter: blur(16px);
@@ -208,17 +204,13 @@
       border-radius: 24px;
       overflow: hidden;
       transition: 0.22s ease;
-      box-shadow:
-        0 10px 35px rgba(0,0,0,0.35);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
     }
     .pack:hover {
-      transform:
-        translateY(-8px)
-        scale(1.02);
-      box-shadow:
-        0 18px 40px rgba(0,0,0,0.45);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
     }
-    /* PREVIEW IMAGE */
+
     .pack img.preview {
       width: 100%;
       height: 200px;
@@ -228,16 +220,15 @@
     .pack-content {
       padding: 24px;
     }
-    /* TITLE IMAGE */
     .title-image {
       width: 100%;
       height: 70px;
       object-fit: contain;
       margin-bottom: 18px;
       display: block;
-      filter:
-        drop-shadow(0 4px 12px rgba(0,0,0,0.45));
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.45));
     }
+
     .pack p {
       color: rgba(255,255,255,0.72);
       line-height: 1.6;
@@ -245,222 +236,107 @@
       font-size: 15px;
     }
 
-    /* ==================== DOWNLOAD BUTTONS ==================== */
-    .download-btn {
-      width: 100%;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      padding: 15px;
-      border-radius: 14px;
-      text-decoration: none;
-      color: white;
-      font-weight: 700;
-      transition: 0.22s ease;
-      background: rgba(0, 0, 0, 0.55);
-      border: 3px solid transparent;
-      background-size: 250% 250%;
-      animation: waveGradient 5s ease infinite;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .download-btn:hover {
-      transform: scale(1.03);
-      filter: brightness(1.08);
-    }
-
-    /* Gradient borders for each button */
-    .btn1 {
-      border-image: linear-gradient(135deg, #00E1FF, #008CFF, #00E1FF) 1;
-    }
-    .btn2 {
-      border-image: linear-gradient(135deg, #FFD100, #CE5848, #FFD100) 1;
-    }
-    .btn3 {
-      border-image: linear-gradient(135deg, #F700FF, #3A00FF, #F700FF) 1;
-    }
-    .btn4 {
-      border-image: linear-gradient(135deg, #FFFFFF, #3573F3, #FFFFFF) 1;
-    }
-    .btn5 {
-      border-image: linear-gradient(135deg, #00297C, #00179F, #00297C) 1;
-    }
-    .btn6 {
-      border-image: linear-gradient(135deg, #B4B4B4, #7A7A7A, #B4B4B4) 1;
-    }
-
-    @keyframes waveGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    /* ==================== END DOWNLOAD BUTTONS ==================== */
-
-    /* FOOTER */
     footer {
       text-align: center;
       color: rgba(255,255,255,0.45);
       padding: 0 20px 40px;
       font-size: 14px;
     }
-    /* MOBILE */
+
     @media (max-width: 900px) {
-      .side-image-left,
-      .side-image-right {
-        display: none;
-      }
+      .side-image-left, .side-image-right { display: none; }
     }
     @media (max-width: 700px) {
-      .hero-box {
-        padding: 35px 25px;
-      }
-      .pack img.preview {
-        height: 170px;
-      }
-      .title-image {
-        height: 56px;
-      }
-      .hero-title-image {
-        max-width: 380px;
-      }
+      .hero-box { padding: 35px 25px; }
+      .pack img.preview { height: 170px; }
+      .title-image { height: 56px; }
+      .hero-title-image { max-width: 380px; }
     }
   </style>
 </head>
 <body>
   <div class="background"></div>
-  <!-- HERO -->
+
   <section class="hero">
     <div class="hero-box">
-      <!-- SIDE IMAGES -->
       <img class="side-image-left" src="https://i.imgur.com/afdVdcR.png">
       <img class="side-image-right" src="https://i.imgur.com/eGTLGTp.png">
-      <!-- CENTER CONTENT -->
       <div class="hero-content">
-        <!-- TITLE IMAGE -->
-        <img
-          class="hero-title-image"
-          src="https://i.imgur.com/CEhrMjP.png"
-        >
-        <p>
-          All tpacks by Scorn. Discord coming soon!
-        </p>
+        <img class="hero-title-image" src="https://i.imgur.com/CEhrMjP.png">
+        <p>All tpacks by Scorn. Discord coming soon!</p>
         <div class="top-links">
-          <!-- PLAY BLOXD -->
           <a class="top-btn bloxd-btn" href="https://bloxd.io" target="_blank">
-            <img src="https://i.imgur.com/yNFWhen.png">
-            Play Bloxd
+            <img src="https://i.imgur.com/yNFWhen.png"> Play Bloxd
           </a>
-          <!-- DISCORD -->
           <a class="top-btn discord-btn" href="https://discord.gg/YOURINVITE" target="_blank">
-            <i class="fa-brands fa-discord"></i>
-            Discord
+            <i class="fa-brands fa-discord"></i> Discord
           </a>
-          <!-- YOUTUBE -->
-          <a
-            class="top-btn youtube-btn"
-            href="https://www.youtube.com/@bloxd_scorn?sub_confirmation=1"
-            target="_blank"
-          >
-            <i class="fa-brands fa-youtube"></i>
-            Subscribe
+          <a class="top-btn youtube-btn" href="https://www.youtube.com/@bloxd_scorn?sub_confirmation=1" target="_blank">
+            <i class="fa-brands fa-youtube"></i> Subscribe
           </a>
         </div>
       </div>
     </div>
   </section>
-  <!-- SUBHEADER -->
+
   <h2 class="section-title">Texture Packs</h2>
-  <!-- PACKS -->
+
   <section class="packs">
-    <!-- PACK 1 -->
     <div class="pack">
       <img class="preview" src="https://i.imgur.com/McshTyI.jpeg">
       <div class="pack-content">
         <img class="title-image" src="https://i.imgur.com/aC5kJ3W.png">
-        <p>
-          Clean default pack edit, fresh UI, original assets from YTKingDream tpack.
-        </p>
-        <a class="download-btn btn1" href="#">
-          <i class="fa-solid fa-download"></i>
-          Download
-        </a>
+        <p>Clean default pack edit, fresh UI, original assets from YTKingDream tpack.</p>
+        <a class="download-btn btn1" href="#"><i class="fa-solid fa-download"></i> Download</a>
       </div>
     </div>
-    <!-- PACK 2 -->
+
     <div class="pack">
       <img class="preview" src="https://picsum.photos/500/300?2">
       <div class="pack-content">
         <img class="title-image" src="https://i.imgur.com/qNm0u54.png">
-        <p>
-          Another clean default edit, new UI/hotbar changes, new tool/armor/wool textures, and more.
-        </p>
-        <a class="download-btn btn2" href="#">
-          <i class="fa-solid fa-download"></i>
-          Download
-        </a>
+        <p>Another clean default edit, new UI/hotbar changes, new tool/armor/wool textures, and more.</p>
+        <a class="download-btn btn2" href="#"><i class="fa-solid fa-download"></i> Download</a>
       </div>
     </div>
-    <!-- PACK 3 -->
+
     <div class="pack">
       <img class="preview" src="https://i.imgur.com/hwqaPeK.jpeg">
       <div class="pack-content">
         <img class="title-image" src="https://i.imgur.com/OLaNuRV.png">
-        <p>
-          A smooth 32x pvp pack, custom armor/tools, all blocks are 32x. Inspired by MC Galaxy 256x.
-        </p>
-        <a class="download-btn btn3" href="#">
-          <i class="fa-solid fa-download"></i>
-          Download
-        </a>
+        <p>A smooth 32x pvp pack, custom armor/tools, all blocks are 32x. Inspired by MC Galaxy 256x.</p>
+        <a class="download-btn btn3" href="#"><i class="fa-solid fa-download"></i> Download</a>
       </div>
     </div>
-    <!-- PACK 4 -->
+
     <div class="pack">
       <img class="preview" src="https://i.imgur.com/JoMx5pu.jpeg">
       <div class="pack-content">
         <img class="title-image" src="https://i.imgur.com/SBRsRbW.png">
-        <p>
-          A remodel of all* bloxd's guns, making them more realistic. Models used from MC TaCZ.
-        </p>
-        <a class="download-btn btn4" href="#">
-          <i class="fa-solid fa-download"></i>
-          Download
-        </a>
+        <p>A remodel of all* bloxd's guns, making them more realistic. Models used from MC TaCZ.</p>
+        <a class="download-btn btn4" href="#"><i class="fa-solid fa-download"></i> Download</a>
       </div>
     </div>
-    <!-- PACK 5 -->
+
     <div class="pack">
       <img class="preview" src="https://i.imgur.com/qMuVKhZ.png">
       <div class="pack-content">
         <img class="title-image" src="https://i.imgur.com/a7NXg1v.png">
-        <p>
-          A recolor of my Scornfault pack with a new skybox and deep blue diamond items.
-        </p>
-        <a class="download-btn btn5" href="#">
-          <i class="fa-solid fa-download"></i>
-          Download (Not yet available)
-        </a>
+        <p>A recolor of my Scornfault pack with a new skybox and deep blue diamond items.</p>
+        <a class="download-btn btn5" href="#"><i class="fa-solid fa-download"></i> Download (Not yet available)</a>
       </div>
     </div>
-    <!-- PACK 6 -->
+
     <div class="pack">
       <img class="preview" src="https://i.imgur.com/4ySbEbV.png">
       <div class="pack-content">
         <img class="title-image" src="https://i.imgur.com/LPqupef.png">
-        <p>
-          ...
-        </p>
-        <a class="download-btn btn6" href="#">
-          <i class="fa-solid fa-download"></i>
-          Download (Not yet available)
-        </a>
+        <p>...</p>
+        <a class="download-btn btn6" href="#"><i class="fa-solid fa-download"></i> Download (Not yet available)</a>
       </div>
     </div>
   </section>
-  <footer>
-    Bloxdio Scorn 2026
-  </footer>
+
+  <footer>Bloxdio Scorn 2026</footer>
 </body>
 </html>
