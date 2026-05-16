@@ -32,7 +32,7 @@
       position: fixed;
       inset: 0;
       background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.78)),
         url("https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop");
       background-size: cover;
       background-position: center;
@@ -45,14 +45,14 @@
       position: absolute;
       inset: 0;
       backdrop-filter: blur(5px);
-      background: rgba(0,0,0,0.25);
+      background: rgba(0,0,0,0.2);
     }
 
     /* HERO */
 
     .hero {
       width: 100%;
-      padding: 80px 20px 50px;
+      padding: 80px 20px 55px;
       display: flex;
       justify-content: center;
     }
@@ -60,7 +60,9 @@
     .hero-box {
       width: 100%;
       max-width: 1000px;
-      padding: 45px;
+
+      padding: 48px;
+
       border-radius: 28px;
 
       background: rgba(20,20,20,0.45);
@@ -76,16 +78,16 @@
     }
 
     .hero h1 {
-      font-size: 58px;
+      font-size: 60px;
       font-weight: 800;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       letter-spacing: -2px;
     }
 
     .hero p {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.72);
       font-size: 18px;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     /* TOP BUTTONS */
@@ -126,20 +128,20 @@
 
     .packs {
       width: 100%;
-      max-width: 1300px;
+      max-width: 1350px;
 
       margin: auto;
-      padding: 10px 25px 70px;
+      padding: 10px 28px 70px;
 
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 30px;
     }
 
     /* PACK CARD */
 
     .pack {
-      background: rgba(18,18,18,0.55);
+      background: rgba(18,18,18,0.58);
       backdrop-filter: blur(16px);
 
       border: 1px solid rgba(255,255,255,0.06);
@@ -158,42 +160,32 @@
       transform: translateY(-6px);
     }
 
+    /* PREVIEW IMAGE */
+
     .pack img.preview {
       width: 100%;
-      height: 190px;
+      height: 200px;
       object-fit: cover;
       display: block;
     }
 
     .pack-content {
-      padding: 26px;
+      padding: 24px;
     }
 
-    /* TITLE ROW */
+    /* TITLE IMAGE */
 
-    .title-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
+    .title-image {
+      width: 100%;
+      height: 70px;
+      object-fit: contain;
 
-    .pack-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-      object-fit: cover;
-      flex-shrink: 0;
+      margin-bottom: 18px;
 
-      box-shadow:
-        0 5px 18px rgba(0,0,0,0.35);
-    }
+      display: block;
 
-    .title-row h2 {
-      margin: 0;
-      font-size: 30px;
-      font-weight: 800;
-      line-height: 1.1;
+      filter:
+        drop-shadow(0 4px 12px rgba(0,0,0,0.45));
     }
 
     .pack p {
@@ -207,6 +199,7 @@
 
     .download-btn {
       width: 100%;
+
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -254,16 +247,11 @@
       }
 
       .pack img.preview {
-        height: 160px;
+        height: 170px;
       }
 
-      .pack-icon {
-        width: 58px;
-        height: 58px;
-      }
-
-      .title-row h2 {
-        font-size: 25px;
+      .title-image {
+        height: 56px;
       }
 
     }
@@ -289,15 +277,21 @@
 
       <div class="top-links">
 
+        <!-- BLOXD -->
+
         <a class="top-btn" href="https://bloxd.io" target="_blank">
           <i class="fa-solid fa-cube"></i>
           Bloxd World
         </a>
 
+        <!-- DISCORD -->
+
         <a class="top-btn" href="https://discord.gg/YOURINVITE" target="_blank">
           <i class="fa-brands fa-discord"></i>
           Discord
         </a>
+
+        <!-- YOUTUBE -->
 
         <a class="top-btn" href="https://youtube.com" target="_blank">
           <i class="fa-brands fa-youtube"></i>
@@ -322,10 +316,8 @@
 
       <div class="pack-content">
 
-        <div class="title-row">
-          <img class="pack-icon" src="icon1.png">
-          <h2>Blue 16x</h2>
-        </div>
+        <!-- TITLE IMAGE -->
+        <img class="title-image" src="title1.png">
 
         <p>
           Clean blue PvP texture pack with smooth particles and modern UI.
@@ -348,10 +340,7 @@
 
       <div class="pack-content">
 
-        <div class="title-row">
-          <img class="pack-icon" src="icon2.png">
-          <h2>Shadow Pack</h2>
-        </div>
+        <img class="title-image" src="title2.png">
 
         <p>
           Dark themed visuals designed for competitive gameplay.
@@ -374,10 +363,7 @@
 
       <div class="pack-content">
 
-        <div class="title-row">
-          <img class="pack-icon" src="icon3.png">
-          <h2>Ruby Revamp</h2>
-        </div>
+        <img class="title-image" src="title3.png">
 
         <p>
           High contrast textures with red highlights and clean swords.
@@ -400,10 +386,7 @@
 
       <div class="pack-content">
 
-        <div class="title-row">
-          <img class="pack-icon" src="icon4.png">
-          <h2>Frostbite</h2>
-        </div>
+        <img class="title-image" src="title4.png">
 
         <p>
           Icy themed PvP pack with transparent GUI and icy effects.
@@ -426,10 +409,7 @@
 
       <div class="pack-content">
 
-        <div class="title-row">
-          <img class="pack-icon" src="icon5.png">
-          <h2>Carbon Edit</h2>
-        </div>
+        <img class="title-image" src="title5.png">
 
         <p>
           Minimal dark pack focused on visibility and performance.
@@ -452,10 +432,7 @@
 
       <div class="pack-content">
 
-        <div class="title-row">
-          <img class="pack-icon" src="icon6.png">
-          <h2>Galaxy Pack</h2>
-        </div>
+        <img class="title-image" src="title6.png">
 
         <p>
           Purple space themed textures with glowing item effects.
