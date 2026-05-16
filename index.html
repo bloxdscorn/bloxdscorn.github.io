@@ -80,6 +80,59 @@
       overflow: hidden;
     }
 
+    /* SHINE EFFECT */
+
+    .hero-box::before {
+      content: "";
+
+      position: absolute;
+
+      top: -120px;
+      left: -220px;
+
+      width: 140px;
+      height: 420px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0),
+          rgba(255,255,255,0.18),
+          rgba(255,255,255,0)
+        );
+
+      transform: rotate(22deg);
+
+      animation: shineSweep 3s infinite;
+
+      pointer-events: none;
+
+      z-index: 1;
+    }
+
+    @keyframes shineSweep {
+
+      0% {
+        left: -260px;
+        opacity: 0;
+      }
+
+      8% {
+        opacity: 1;
+      }
+
+      30% {
+        left: 120%;
+        opacity: 0;
+      }
+
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+
+    }
+
     /* SIDE IMAGES */
 
     .side-image-left,
@@ -149,8 +202,14 @@
     }
 
     .top-btn:hover {
-      transform: translateY(-3px);
+      transform:
+        translateY(-3px)
+        scale(1.045);
+
       filter: brightness(1.08);
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.28);
     }
 
     /* PLAY BLOXD */
@@ -175,6 +234,25 @@
 
     .youtube-btn {
       background: #ff0000;
+    }
+
+    /* SUBHEADER */
+
+    .section-title {
+      text-align: center;
+
+      margin-top: 5px;
+      margin-bottom: 34px;
+
+      font-size: 42px;
+      font-weight: 800;
+
+      letter-spacing: -1px;
+
+      color: white;
+
+      text-shadow:
+        0 5px 20px rgba(0,0,0,0.35);
     }
 
     /* PACK GRID */
@@ -210,7 +288,12 @@
     }
 
     .pack:hover {
-      transform: translateY(-6px);
+      transform:
+        translateY(-8px)
+        scale(1.02);
+
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.45);
     }
 
     /* PREVIEW IMAGE */
@@ -390,6 +473,10 @@
     </div>
 
   </section>
+
+  <!-- SUBHEADER -->
+
+  <h2 class="section-title">Texture Packs</h2>
 
   <!-- PACKS -->
 
