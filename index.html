@@ -141,15 +141,8 @@
       user-select: none;
     }
 
-    .side-image-left {
-      left: 25px;
-    }
-
-    .side-image-right {
-      right: 25px;
-    }
-
-    /* CENTER CONTENT */
+    .side-image-left { left: 25px; }
+    .side-image-right { right: 25px; }
 
     .hero-content {
       position: relative;
@@ -183,17 +176,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
-
       padding: 14px 22px;
-
       border-radius: 14px;
-
       text-decoration: none;
       color: white;
-
       transition: 0.2s ease;
       font-weight: 700;
-
       border: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -207,20 +195,7 @@
     .discord-btn { background: #5865F2; }
     .youtube-btn { background: #ff0000; }
 
-    /* SECTION TITLE */
-
-    .section-title {
-      text-align: center;
-      margin-top: 5px;
-      margin-bottom: 34px;
-      font-size: 42px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      color: white;
-      text-shadow: 0 5px 20px rgba(0,0,0,0.35);
-    }
-
-    /* PACK GRID */
+    /* PACKS */
 
     .packs {
       width: 100%;
@@ -231,8 +206,6 @@
       grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
       gap: 30px;
     }
-
-    /* PACK CARD */
 
     .pack {
       background: rgba(18,18,18,0.58);
@@ -256,9 +229,7 @@
       display: block;
     }
 
-    .pack-content {
-      padding: 24px;
-    }
+    .pack-content { padding: 24px; }
 
     .title-image {
       width: 100%;
@@ -276,7 +247,7 @@
       font-size: 15px;
     }
 
-    /* DOWNLOAD BUTTONS (UPDATED: OUTLINE + BLACK GLASS) */
+    /* DOWNLOAD BUTTONS (GLASS + OUTLINE ONLY) */
 
     @keyframes waveGradient {
       0% { background-position: 0% 50%; }
@@ -292,21 +263,17 @@
       gap: 10px;
 
       padding: 15px;
-
       border-radius: 14px;
 
       text-decoration: none;
       color: white;
       font-weight: 700;
 
-      position: relative;
-
-      /* black glass fill */
+      /* GLASS BASE */
       background: rgba(0, 0, 0, 0.55);
 
-      /* gradient outline */
+      /* OUTLINE GRADIENT */
       border: 2px solid transparent;
-
       background-origin: border-box;
       background-clip: padding-box, border-box;
 
@@ -357,16 +324,12 @@
         linear-gradient(135deg, #B4B4B4, #7A7A7A, #B4B4B4);
     }
 
-    /* FOOTER */
-
     footer {
       text-align: center;
       color: rgba(255,255,255,0.45);
       padding: 0 20px 40px;
       font-size: 14px;
     }
-
-    /* MOBILE */
 
     @media (max-width: 900px) {
       .side-image-left,
@@ -376,21 +339,10 @@
     }
 
     @media (max-width: 700px) {
-      .hero-box {
-        padding: 35px 25px;
-      }
-
-      .pack img.preview {
-        height: 170px;
-      }
-
-      .title-image {
-        height: 56px;
-      }
-
-      .hero-title-image {
-        max-width: 380px;
-      }
+      .hero-box { padding: 35px 25px; }
+      .pack img.preview { height: 170px; }
+      .title-image { height: 56px; }
+      .hero-title-image { max-width: 380px; }
     }
 
   </style>
@@ -401,7 +353,6 @@
   <div class="background"></div>
 
   <section class="hero">
-
     <div class="hero-box">
 
       <img class="side-image-left" src="https://i.imgur.com/afdVdcR.png">
@@ -437,7 +388,6 @@
       </div>
 
     </div>
-
   </section>
 
   <h2 class="section-title">Texture Packs</h2>
@@ -499,7 +449,7 @@
         <p>A recolor of my Scornfault pack with a new skybox and deep blue diamond items.</p>
         <a class="download-btn btn5" href="#">
           <i class="fa-solid fa-download"></i>
-          Download
+          Download (Not yet available)
         </a>
       </div>
     </div>
