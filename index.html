@@ -80,31 +80,55 @@
       overflow: hidden;
     }
 
+    /* SHINE EFFECT (1.5s cooldown) */
+
     .hero-box::before {
       content: "";
+
       position: absolute;
+
       top: -120px;
       left: -220px;
+
       width: 140px;
       height: 420px;
-      background: linear-gradient(
-        90deg,
-        rgba(255,255,255,0),
-        rgba(255,255,255,0.18),
-        rgba(255,255,255,0)
-      );
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0),
+          rgba(255,255,255,0.18),
+          rgba(255,255,255,0)
+        );
+
       transform: rotate(22deg);
-      animation: shineSweep 3s infinite;
+
+      animation: shineSweep 1.5s infinite;
+
       pointer-events: none;
+
       z-index: 1;
     }
 
     @keyframes shineSweep {
-      0% { left: -260px; opacity: 0; }
-      8% { opacity: 1; }
-      30% { left: 120%; opacity: 0; }
-      100% { left: 120%; opacity: 0; }
+      0% {
+        left: -260px;
+        opacity: 0;
+      }
+      8% {
+        opacity: 1;
+      }
+      30% {
+        left: 120%;
+        opacity: 0;
+      }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
     }
+
+    /* SIDE IMAGES */
 
     .side-image-left,
     .side-image-right {
@@ -117,10 +141,20 @@
       user-select: none;
     }
 
-    .side-image-left { left: 25px; }
-    .side-image-right { right: 25px; }
+    .side-image-left {
+      left: 25px;
+    }
 
-    .hero-content { position: relative; z-index: 2; }
+    .side-image-right {
+      right: 25px;
+    }
+
+    /* CENTER CONTENT */
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
 
     .hero-title-image {
       width: 100%;
@@ -136,7 +170,7 @@
       margin-bottom: 32px;
     }
 
-    /* TOP BUTTONS (UNCHANGED SIZE/STYLE) */
+    /* TOP BUTTONS (UNCHANGED) */
 
     .top-links {
       display: flex;
@@ -198,6 +232,8 @@
       gap: 30px;
     }
 
+    /* PACK CARD */
+
     .pack {
       background: rgba(18,18,18,0.58);
       backdrop-filter: blur(16px);
@@ -220,7 +256,9 @@
       display: block;
     }
 
-    .pack-content { padding: 24px; }
+    .pack-content {
+      padding: 24px;
+    }
 
     .title-image {
       width: 100%;
@@ -238,7 +276,7 @@
       font-size: 15px;
     }
 
-    /* DOWNLOAD BUTTONS (UPDATED STYLE) */
+    /* DOWNLOAD BUTTONS (UPDATED: OUTLINE + BLACK GLASS) */
 
     @keyframes waveGradient {
       0% { background-position: 0% 50%; }
@@ -254,6 +292,7 @@
       gap: 10px;
 
       padding: 15px;
+
       border-radius: 14px;
 
       text-decoration: none;
@@ -262,7 +301,10 @@
 
       position: relative;
 
+      /* black glass fill */
       background: rgba(0, 0, 0, 0.55);
+
+      /* gradient outline */
       border: 2px solid transparent;
 
       background-origin: border-box;
@@ -334,10 +376,21 @@
     }
 
     @media (max-width: 700px) {
-      .hero-box { padding: 35px 25px; }
-      .pack img.preview { height: 170px; }
-      .title-image { height: 56px; }
-      .hero-title-image { max-width: 380px; }
+      .hero-box {
+        padding: 35px 25px;
+      }
+
+      .pack img.preview {
+        height: 170px;
+      }
+
+      .title-image {
+        height: 56px;
+      }
+
+      .hero-title-image {
+        max-width: 380px;
+      }
     }
 
   </style>
@@ -348,6 +401,7 @@
   <div class="background"></div>
 
   <section class="hero">
+
     <div class="hero-box">
 
       <img class="side-image-left" src="https://i.imgur.com/afdVdcR.png">
@@ -357,7 +411,7 @@
 
         <img class="hero-title-image" src="https://i.imgur.com/CEhrMjP.png">
 
-        <p>Discord coming soon!</p>
+        <p>All tpacks by Scorn. Discord coming soon!</p>
 
         <div class="top-links">
 
@@ -383,6 +437,7 @@
       </div>
 
     </div>
+
   </section>
 
   <h2 class="section-title">Texture Packs</h2>
