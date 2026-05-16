@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Packs</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1117;
+      color: white;
+      text-align: center;
+    }
+
+    .header {
+      padding: 50px 20px;
+    }
+
+    .header h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: #999;
+      font-size: 18px;
+    }
+
+    .packs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .card {
+      background: #1b1f2a;
+      border-radius: 18px;
+      width: 280px;
+      overflow: hidden;
+      transition: 0.2s ease;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #4b7cff;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #6994ff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>My Bloxd Packs</h1>
+    <p>Texture packs and projects</p>
+  </div>
+
+  <div class="packs">
+
+    <div class="card">
+      <img src="https://picsum.photos/400/200" alt="">
+      <div class="card-content">
+        <h2>Blue Pack</h2>
+        <p>Clean blue themed texture pack.</p>
+        <a class="button" href="#">Download</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/401/200" alt="">
+      <div class="card-content">
+        <h2>Dark Pack</h2>
+        <p>Minimal dark style for PvP.</p>
+        <a class="button" href="#">Download</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
