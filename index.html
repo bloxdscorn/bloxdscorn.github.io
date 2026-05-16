@@ -357,9 +357,6 @@
     }
 
     .download-btn {
-
-      position: relative;
-
       width: 100%;
 
       display: inline-flex;
@@ -378,41 +375,10 @@
 
       transition: 0.22s ease;
 
-      background:
-        rgba(0,0,0,0.45);
-
-      backdrop-filter: blur(10px);
-
-      overflow: hidden;
-
-      z-index: 1;
-    }
-
-    .download-btn::before {
-
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      border-radius: 14px;
-
-      padding: 2px;
-
       background-size: 250% 250%;
 
       animation:
         waveGradient 5s ease infinite;
-
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-      -webkit-mask-composite: xor;
-
-      mask-composite: exclude;
-
-      z-index: -1;
     }
 
     .download-btn:hover {
@@ -422,7 +388,7 @@
 
     /* BUTTON COLORS */
 
-    .btn1::before {
+    .btn1 {
       background-image:
         linear-gradient(
           135deg,
@@ -432,7 +398,7 @@
         );
     }
 
-    .btn2::before {
+    .btn2 {
       background-image:
         linear-gradient(
           135deg,
@@ -442,7 +408,7 @@
         );
     }
 
-    .btn3::before {
+    .btn3 {
       background-image:
         linear-gradient(
           135deg,
@@ -452,7 +418,7 @@
         );
     }
 
-    .btn4::before {
+    .btn4 {
       background-image:
         linear-gradient(
           135deg,
@@ -462,7 +428,7 @@
         );
     }
 
-    .btn5::before {
+    .btn5 {
       background-image:
         linear-gradient(
           135deg,
@@ -472,7 +438,7 @@
         );
     }
 
-    .btn6::before {
+    .btn6 {
       background-image:
         linear-gradient(
           135deg,
@@ -553,7 +519,7 @@
         >
 
         <p>
-          All tpacks by Scorn. Discord coming soon!
+          Discord coming soon!
         </p>
 
         <div class="top-links">
@@ -570,7 +536,7 @@
 
           <!-- DISCORD -->
 
-          <a class="top-btn discord-btn" href="https://discord.gg/YOURINVITE" target="_blank">
+          <a class="top-btn discord-btn" href="https://discord.com" target="_blank">
 
             <i class="fa-brands fa-discord"></i>
 
@@ -599,6 +565,158 @@
     </div>
 
   </section>
+
+  <!-- SUBHEADER -->
+
+  <h2 class="section-title">Texture Packs</h2>
+
+  <!-- PACKS -->
+
+  <section class="packs">
+
+    <!-- PACK 1 -->
+
+    <div class="pack">
+
+      <img class="preview" src="https://i.imgur.com/McshTyI.jpeg">
+
+      <div class="pack-content">
+
+        <img class="title-image" src="https://i.imgur.com/aC5kJ3W.png">
+
+        <p>
+          Clean default pack edit, fresh UI, original assets from YTKingDream tpack.
+        </p>
+
+        <a class="download-btn btn1" href="https://sub2unlock.io/9KIcp">
+          <i class="fa-solid fa-download"></i>
+          Download
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PACK 2 -->
+
+    <div class="pack">
+
+      <img class="preview" src="https://i.imgur.com/oQ1wpPH.jpeg">
+
+      <div class="pack-content">
+
+        <img class="title-image" src="https://i.imgur.com/qNm0u54.png">
+
+        <p>
+          Another clean default edit, new UI/hotbar changes, new tool/armor/wool textures, and more.
+        </p>
+
+        <a class="download-btn btn2" href="#">
+          <i class="fa-solid fa-download"></i>
+          Download (Not yet available)
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PACK 3 -->
+
+    <div class="pack">
+
+      <img class="preview" src="https://i.imgur.com/hwqaPeK.jpeg">
+
+      <div class="pack-content">
+
+        <img class="title-image" src="https://i.imgur.com/OLaNuRV.png">
+
+        <p>
+          A smooth 32x pvp pack, custom armor/tools, all blocks are 32x. Inspired by MC Galaxy 256x.
+        </p>
+
+        <a class="download-btn btn3" href="https://sub2unlock.io/Z0aOE">
+          <i class="fa-solid fa-download"></i>
+          Download
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PACK 4 -->
+
+    <div class="pack">
+
+      <img class="preview" src="https://i.imgur.com/JoMx5pu.jpeg">
+
+      <div class="pack-content">
+
+        <img class="title-image" src="https://i.imgur.com/SBRsRbW.png">
+
+        <p>
+          A remodel of all* bloxd's guns, making them more realistic. Models used from MC TaCZ.
+        </p>
+
+        <a class="download-btn btn4" href="https://sub2unlock.io/f3k0e">
+          <i class="fa-solid fa-download"></i>
+          Download
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PACK 5 -->
+
+    <div class="pack">
+
+      <img class="preview" src="https://i.imgur.com/qMuVKhZ.png">
+
+      <div class="pack-content">
+
+        <img class="title-image" src="https://i.imgur.com/a7NXg1v.png">
+
+        <p>
+          A recolor of my Scornfault pack with a new skybox and deep blue diamond items.
+        </p>
+
+        <a class="download-btn btn5" href="#">
+          <i class="fa-solid fa-download"></i>
+          Download (Not yet available)
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PACK 6 -->
+
+    <div class="pack">
+
+      <img class="preview" src="https://i.imgur.com/4ySbEbV.png">
+
+      <div class="pack-content">
+
+        <img class="title-image" src="https://i.imgur.com/LPqupef.png">
+
+        <p>
+          ...
+        </p>
+
+        <a class="download-btn btn6" href="#">
+          <i class="fa-solid fa-download"></i>
+          Download (Not yet available)
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    Bloxdio Scorn 2026
+  </footer>
 
 </body>
 </html>
