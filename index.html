@@ -75,6 +75,37 @@
         inset 0 0 0 1px rgba(255,255,255,0.03);
 
       text-align: center;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* SIDE IMAGES */
+
+    .side-image-left,
+    .side-image-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 170px;
+      opacity: 0.92;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .side-image-left {
+      left: 25px;
+    }
+
+    .side-image-right {
+      right: 25px;
+    }
+
+    /* CENTER CONTENT */
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
 
     .hero h1 {
@@ -106,22 +137,44 @@
 
       padding: 14px 22px;
 
-      background: rgba(255,255,255,0.08);
-
-      border: 1px solid rgba(255,255,255,0.08);
-
       border-radius: 14px;
 
       text-decoration: none;
       color: white;
 
       transition: 0.2s ease;
-      font-weight: 600;
+      font-weight: 700;
+
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .top-btn:hover {
       transform: translateY(-3px);
-      background: rgba(255,255,255,0.14);
+      filter: brightness(1.08);
+    }
+
+    /* PLAY BLOXD */
+
+    .bloxd-btn {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .bloxd-btn img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    /* DISCORD */
+
+    .discord-btn {
+      background: #5865F2;
+    }
+
+    /* YOUTUBE */
+
+    .youtube-btn {
+      background: #ff0000;
     }
 
     /* PACK GRID */
@@ -236,6 +289,15 @@
 
     /* MOBILE */
 
+    @media (max-width: 900px) {
+
+      .side-image-left,
+      .side-image-right {
+        display: none;
+      }
+
+    }
+
     @media (max-width: 700px) {
 
       .hero h1 {
@@ -269,34 +331,59 @@
 
     <div class="hero-box">
 
-      <h1>Bloxdio Scorn</h1>
+      <!-- SIDE IMAGES -->
 
-      <p>
-        All tpacks by Scorn. Discord coming soon!
-      </p>
+      <img class="side-image-left" src="https://i.imgur.com/afdVdcR.png">
 
-      <div class="top-links">
+      <img class="side-image-right" src="https://i.imgur.com/eGTLGTp.png">
 
-        <!-- BLOXD -->
+      <!-- CENTER CONTENT -->
 
-        <a class="top-btn" href="https://bloxd.io" target="_blank">
-          <i class="fa-solid fa-cube"></i>
-          Play Bloxd
-        </a>
+      <div class="hero-content">
 
-        <!-- DISCORD -->
+        <h1>Bloxdio Scorn</h1>
 
-        <a class="top-btn" href="https://discord.gg/YOURINVITE" target="_blank">
-          <i class="fa-brands fa-discord"></i>
-          Discord
-        </a>
+        <p>
+          All tpacks by Scorn. Discord coming soon!
+        </p>
 
-        <!-- YOUTUBE -->
+        <div class="top-links">
 
-        <a class="top-btn" href="https://youtube.com" target="_blank">
-          <i class="fa-brands fa-youtube"></i>
-          YouTube
-        </a>
+          <!-- PLAY BLOXD -->
+
+          <a class="top-btn bloxd-btn" href="https://bloxd.io" target="_blank">
+
+            <img src="https://i.imgur.com/yNFWhen.png">
+
+            Play Bloxd
+
+          </a>
+
+          <!-- DISCORD -->
+
+          <a class="top-btn discord-btn" href="https://discord.gg/YOURINVITE" target="_blank">
+
+            <i class="fa-brands fa-discord"></i>
+
+            Discord
+
+          </a>
+
+          <!-- YOUTUBE -->
+
+          <a
+            class="top-btn youtube-btn"
+            href="https://www.youtube.com/@bloxd_scorn?sub_confirmation=1"
+            target="_blank"
+          >
+
+            <i class="fa-brands fa-youtube"></i>
+
+            Subscribe
+
+          </a>
+
+        </div>
 
       </div>
 
@@ -316,7 +403,6 @@
 
       <div class="pack-content">
 
-        <!-- TITLE IMAGE -->
         <img class="title-image" src="https://i.imgur.com/aC5kJ3W.png">
 
         <p>
@@ -389,7 +475,7 @@
         <img class="title-image" src="https://i.imgur.com/SBRsRbW.png">
 
         <p>
-          A remodel of all* bloxd's guns, making them more realistic. Models used from MC TaCZ. *(5 guns were added, updating soon)
+          A remodel of all* bloxd's guns, making them more realistic. Models used from MC TaCZ.
         </p>
 
         <a class="download-btn" href="#">
@@ -412,7 +498,7 @@
         <img class="title-image" src="https://i.imgur.com/a7NXg1v.png">
 
         <p>
-          A recolor of my Scornfault pack, new skybox, all diamond items are now a deep blue. Made for DOGBOI
+          A recolor of my Scornfault pack with a new skybox and deep blue diamond items.
         </p>
 
         <a class="download-btn" href="#">
